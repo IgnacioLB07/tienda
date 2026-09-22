@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author ignap
  */
+@Service
 public class CategoriaService {
 
     // El repositorio es final para asegurar la inmutabilidad
