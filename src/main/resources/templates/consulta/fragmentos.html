@@ -67,7 +67,8 @@
             <div th:replace="~{consulta/fragmentos :: formConsulta('primary',#{consultas.derivadas},'/consultas/consultaDerivada')}"/>
             <div th:replace="~{consulta/fragmentos :: formConsulta('warning',#{consultas.jpql},'/consultas/consultaJPQL')}"/>
             <div th:replace="~{consulta/fragmentos :: formConsulta('success',#{consultas.sql},'/consultas/consultaSQL')}"/>
-            <div class='card'><p>Acá va su Práctica #2</p></div>
+            <div th:replace="~{consulta/fragmentos :: formConsulta('danger',#{consultas.practica2},'/consultas/consultaAmpliada')}"/>
+            
         </section>
 
         <div th:fragment='formConsulta(colorForm, textoForm, urlForm)'>

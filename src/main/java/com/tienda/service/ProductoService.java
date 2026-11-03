@@ -81,5 +81,10 @@ public class ProductoService {
     public List<Producto> consultaSQL(BigDecimal precioInf, BigDecimal precioSup) {
         return productoRepository.consultaSQL(precioInf, precioSup);
     }
+    
+    @Transactional(readOnly = true)
+    public List<Producto> consultaAmpliada(BigDecimal precioSup) {
+        return productoRepository.findByPrecioGreaterThan(precioSup);
+    }
 
 }

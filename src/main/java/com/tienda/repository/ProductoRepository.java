@@ -18,9 +18,12 @@ public interface ProductoRepository extends JpaRepository<Producto, Integer> {
     //Consulta JPQL que recupera los producto de un rango de precio y los ordena por precio ascendentemente
     @Query(value = "SELECT p FROM Producto p WHERE p.precio BETWEEN :precioInf AND :precioSup ORDER BY p.precio ASC")
     public List<Producto> consultaJPQL(BigDecimal precioInf, BigDecimal precioSup);
-//
-//    //Consulta SQL que recupera los producto de un rango de precio y los ordena por precio ascendentemente
+
+    //Consulta SQL que recupera los producto de un rango de precio y los ordena por precio ascendentemente
     @Query(nativeQuery = true,
             value = "SELECT * FROM producto p WHERE p.precio BETWEEN :precioInf AND :precioSup ORDER BY p.precio ASC")
     public List<Producto> consultaSQL(BigDecimal precioInf, BigDecimal precioSup);
+    
+    //Consulta Ampliada para la practica 2 
+    public List<Producto> findByPrecioGreaterThan(BigDecimal precioSup);
 }
